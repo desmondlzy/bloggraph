@@ -1,0 +1,54 @@
+$font-path: "../fonts"
+$fa-font-path: "../fonts/font-awesome";
+$prev-icon-path: "../images/icons/previous.svg"
+$next-icon-path: "../images/icons/double-arrow.svg"
+$never-icon-path: "../images/sitting.svg"
+
+// orange  [rgb(255,149,0), rgb( 255,159,10)]
+// purple [rgb(175,82,222), rgb(191,90,242)]
+// indigo [rgb(88,86,214),rgb(94,92,230)]
+html
+  --header-font: 'Linux Biolinum', "Times New Roman", Times, serif
+  --font: 'Linux Libertine', serif 
+  --code-font: Menlo, Monaco, Consolas, "Courier New", monospace
+  --theme: #000730 
+  --main-width: 900px
+  --ease: cubic-bezier(.19,1,.22,1)
+  --color-mode: "lit"
+  --light: rgb(249, 249, 249)
+  --light-secondary: #3559fc
+  --dark: #242933
+  --dark-secondary: #001174
+  --gray: #f5f5f5
+  --bubble: rgb(16,16,18)
+  --accent: var(--gray)
+  --bg: var(--light)
+  --bg-dark: #111
+  --text: var(--dark)
+  --link: var(--dark-secondary)
+
+  @mixin darkmode
+    --light: #eee
+    --color-mode: 'dim'
+    --bg: var(--bg-dark)
+    --text: var(--light)
+    --link: var(--light-secondary)
+    --accent: var(--bubble)
+    --theme: #000d55
+    *
+      box-shadow: none !important
+
+    main p
+      opacity: 0.9
+
+  // uncomment below section to enable dark mode
+  // &[data-mode="dim"]
+  //   @include darkmode
+  //   .color
+  //     &_choice
+  //       &::after
+  //         transform: translateX(1.75rem) scale(1.67)
+
+  // @media (prefers-color-scheme: dark)
+  //   &:not(.nodarkmode):not([data-mode="lit"])
+      // @include darkmode

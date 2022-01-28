@@ -1,0 +1,7 @@
+{{ $scriptPath := "index.js" }}
+{{ $scripts := resources.Get $scriptPath | resources.ExecuteAsTemplate $scriptPath . | resources.Minify | resources.Fingerprint "sha512" }}
+<!-- development env, load scripts from local file system -->
+{{- if .Site.IsServer }}
+<!-- production env, load from CDN -->
+{{- else }}
+{{- end }}

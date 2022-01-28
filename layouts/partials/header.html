@@ -1,0 +1,18 @@
+{{ $home := absURL "/" }}
+<header class="nav">
+  <nav class="nav-menu">
+    <a href="{{ $home }}" class="nav-brand">{{ .Site.Title }}</a>
+    <ul class="nav-labels">
+      {{- range .Site.Menus.main }}
+      <li>
+        <a href="{{ absURL .URL }}" class="nav_item">{{ .Name }}</a>
+      </li>
+      {{- end }}
+    </ul>
+    <p class="nav-byline pale">{{ .Site.Params.Subtitle }}</p>
+    <!-- <div class="nav_bar-wrap"> -->
+      <!-- <div class="nav_bar">
+      </div> -->
+    </div>
+  </nav>
+</header>

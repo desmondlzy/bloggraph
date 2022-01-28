@@ -1,0 +1,44 @@
+{{/*  {{ $.Page.Params }}  */}}
+{{ $title := $.Page.Title }}
+{{ $description := $.Page.Params.Get "summary" }}
+{{ $authors := $.Page.Params.Get "authors" }}
+{{ $venue := $.Page.Params.Get "venue" }}
+{{ $affiliations := $.Page.Params.Get "affiliations" }}
+
+<h1>{{ $title }}</h1>
+
+{{ with $venue }}
+<h5 style="margin-top: 0;"><a href={{ index . "url" }}></a>{{ index . "name" }}</a></h5>
+{{ end }}
+
+<div class="authors header-font">
+	{{ range $index, $author := $authors }}
+		{{ $fullname := split (index $author "name") ", " }}
+		{{ $lastname := index $fullname 0 }}
+		{{ $firstname := index $fullname 1 }}
+		{{ $url := index $author "url" }}
+		{{ $affl := index $author "affiliations"}}
+		{{ $numAffl := len $affl }}
+
+		<div class="author-info">
+
+		<a class="author-name" href={{ $url }}>{{ $firstname }} {{ $lastname }}</a>
+
+		<div class="author-affliation">
+		{{ range $index, $affiliationIndex := (index $author "affiliations") }}
+			{{ $affiliationName := (index $affiliations (sub $affiliationIndex 1) "name") }}
+			{{ $affiliationURL := (index $affiliations (sub $affiliationIndex 1) "url") }}
+
+			<a class="author-affiliation-name" href="{{ $affiliationURL }}">{{$affiliationName }}{{ if lt $index (sub $numAffl 1) }},{{ end }}</a>
+			
+		{{ end }}
+		</div>
+
+		</div>
+
+	{{ end }}
+</div>
+
+{{ with $description }}
+<p style="margin-top: 1em;"><em>{{ . }}</em></p>
+{{ end }}

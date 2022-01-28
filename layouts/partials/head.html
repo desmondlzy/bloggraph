@@ -1,0 +1,22 @@
+<head>
+  <title>
+    {{- $siteTitle := .Site.Title }}
+    {{- $pageTitle := .Title }}
+    {{- if eq $siteTitle $pageTitle }}
+      {{- $siteTitle }}
+    {{- else }}
+      {{- printf "%s | %s" $pageTitle  $siteTitle }}
+    {{- end }}
+  </title>
+  <meta charset='utf-8'>
+  {{- with .Site.Params.ga_verify }}
+  <meta name="google-site-verification" content="{{ . }}" />
+  {{- end }}
+  <meta name="viewport" content ="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  {{- partialCached "analytics" . }}
+  {{- partial "opengraph" . }}
+  {{- partialCached "favicon" . }}
+  {{- partialCached "scripts" . }}
+  {{- partialCached "styles" . }}
+</head>

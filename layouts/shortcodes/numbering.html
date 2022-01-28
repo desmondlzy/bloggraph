@@ -1,0 +1,42 @@
+{{ $figure := default true (.Get "figure") }}
+{{ $h2 := default true (.Get "h2") }}
+{{ $h3 := default true (.Get "h3") }}
+
+{{ if or $h2 $h3 }}
+<style>
+h2 {
+  counter-increment: seccounter;
+  counter-reset: subseccounter;
+}
+h3 {
+  counter-increment: subseccounter;
+}
+</style>
+{{ end }}
+ 
+{{ if $figure }}
+<style>
+figure figcaption::before {
+  content: "Fig. " counter(figcounter) ".\00a0";
+  counter-increment: figcounter;
+}
+</style>
+{{ end }}
+
+{{ if $h2 }}
+<style>
+h2::before {
+  content: counter(seccounter) " \00a0\00a0";
+  display: inline;
+}
+</style>
+{{ end }}
+
+{{ if $h3 }}
+<style>
+h3::before {
+  content: counter(seccounter) "." counter(subseccounter) " \00a0";
+  display: inline;
+}
+</style>
+{{ end }}

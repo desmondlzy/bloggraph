@@ -1,0 +1,26 @@
+{{ define "main" }}
+  <article class="home">
+    <div>
+      <div class="home_inner count-h2h3 count-figure">
+        {{ with .Site.GetPage "_profile.md" }}
+          <div class="profile">
+            <figure class="profile-photo">
+            <img src={{ .Param "avatar.src" }}>
+            <figcaption>{{ .Param "avatar.caption" }}</figcaption>
+            </figure>
+            <div class="profile-info">
+              {{ .Content }}
+              <div class="spacer"></div>
+              <span class="profile-social-box">
+              <a class="profile-social" style="text-decoration: none;" href=https://github.com/{{ .Params.github }}><i class="fab fa-github"></i> github/{{- .Params.github -}}</a>
+              <a class="profile-social" style="text-decoration: none;" href=https://linkedin.com/in/{{ .Params.linkedin }}><i class="fab fa-linkedin-in"></i> linkedin/{{- .Params.linkedin -}}</a>
+              <a class="profile-social" style="text-decoration: none;" href={{ .Params.email }}><i class="fas fa-envelope"></i> {{ .Params.email }}</a>
+              </span>
+            </div>
+          </div>
+        {{ end }}
+        {{ .Content }}
+      </div>
+    </div>
+  </article>
+{{ end }}

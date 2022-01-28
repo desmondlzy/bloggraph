@@ -1,0 +1,94 @@
+.nav
+  width: 100%
+  transition: height 0.4s cubic-bezier(0.52, 0.16, 0.24, 1)
+  z-index: 999
+  padding-top: 30px
+  padding-bottom: 50px
+  &_bar
+    width: 100%
+
+    &-wrap
+      width: 1.8rem
+      height: 1.8rem
+      display: grid
+      align-items: center
+      cursor: pointer
+      z-index: 99
+      min-height: 1.5rem
+
+    &, &::after, &::before
+      padding: 1px
+      border-radius: 2px
+      background-color: var(--text)
+
+    &::after, &::before
+      content: ""
+      position: absolute
+      width: 1.2rem
+
+    &::before
+      top: -0.5rem
+
+    &::after
+      top: 0.5rem
+      right: 0
+
+  &-body
+    box-shadow: 0 1.5rem 6rem rgba(0,0,0,0.17)
+    position: fixed
+    right: 10px
+    z-index: 1
+    top: 100%
+    opacity: 0
+    overflow: hidden
+    transition: top 0.33s linear
+    background: transparent
+    background-color: var(--accent)
+    width: 16rem
+    padding: 100px 0
+    min-height: 100vh
+    z-index: 1
+    &:hover
+      box-shadow: 0 1.5rem 6rem rgba(0,0,0,0.27)
+
+    a
+      display: block
+      padding: 12.5px 25px
+      margin-bottom: 2px
+      border-bottom: 1px solid rgba(0,0,0,0.04)
+      transition:color 0.25s ease-in-out
+      &:hover
+        color: var(--theme)
+
+  &-brand
+    font-family: var(--header-font)
+    font-size: 1.7em !important
+    padding-top: 0 !important
+    padding-bottom: 0 !important
+    text-transform: uppercase
+    display: inline
+  
+  &-labels
+    @media (min-width: 0px)
+      display: block
+
+    @media (min-width: 650px)
+      display: inline-block
+      float: right
+      padding-top: 15px
+    
+  &-byline
+    @media (min-width: 0px)
+      margin-bottom: 0.5rem
+
+    @media (min-width: 650px)
+      margin-bottom: 0.0rem
+
+  li
+    display: inline
+    a
+      padding-right: 10px
+
+  &_item
+    font-family: var(--header-font)
+    text-transform: uppercase
