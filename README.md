@@ -74,7 +74,7 @@ The above command creates a template with all front matters and boilerplate code
 	- param: h3=true/false (default: true), number h3 tags;
 	- param: figure=true/false (default: true), number the figures;
 - `publication/single`: show a preview of a publication of a given title.
-	- param: title, use to match the publication to show
+	- param: title="", use to match the publication to show, must be identical to the `title` field in the front matter of the corresponding markdown file.
 - `publication/list`:  show list of preview of all publications.
 	- no parameter.
 
@@ -82,4 +82,7 @@ The above command creates a template with all front matters and boilerplate code
 
 The design is inspired by the ACM SIGGRAPH technical paper template. Part of the CSS and template files are modified from the theme [Newsroom](https://github.com/onweru/newsroom).
 
-FontAwesome,
+The following fonts are bundled with `bloggraph` (click for license):
+[FontAwesome](https://fontawesome.com/v4.7/license/), 
+[Linux Biolinum](https://www.fontsquirrel.com/license/linux-biolinum), and 
+[Linux Libertine](https://www.fontsquirrel.com/license/linux-libertine).
