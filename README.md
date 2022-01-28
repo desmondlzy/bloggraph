@@ -1,6 +1,6 @@
 # Bloggraph
 
-An academic [Hugo](https://gohugo.io/) theme. Computer graphics researchers, you know what is it ;)
+An academic theme for [Hugo](https://gohugo.io/), in the style of SIGGRAPH technical paper. Computer graphics researchers, you know what it is ;)
 
 ## Install
 
