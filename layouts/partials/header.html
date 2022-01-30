@@ -1,4 +1,4 @@
-{{ $home := absURL "/" }}
+{{ $home := .Site.BaseURL }}
 <header class="nav">
   <nav class="nav-menu">
     <a href="{{ $home }}" class="nav-brand">{{ .Site.Title }}</a>
