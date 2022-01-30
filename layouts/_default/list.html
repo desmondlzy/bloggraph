@@ -1,6 +1,5 @@
 {{- define "main" }}
   {{ $title := default .CurrentSection.Section .Page.Title }}
-  <h1 class="archive_title">{{- title $title -}}</h1>
   {{- .Content -}}
   {{- partial "archive" . }}
   <div class="wrap">
