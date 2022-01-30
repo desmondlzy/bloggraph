@@ -1,15 +1,15 @@
 # Bloggraph
 
-An academic theme for [Hugo](https://gohugo.io/), in the style of SIGGRAPH technical paper. Computer graphics researchers, you know what it is ;)
+An academic theme for [Hugo](https://gohugo.io/), in the style of SIGGRAPH technical paper. Computer graphics people, you know what it is ;)
 
 ## Install
 
-Follow the "[Add a theme](https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme)" section in the official quick start guide.
+Follow the "[Add a theme](https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme)" section in the official [quick start guide](https://gohugo.io/getting-started/quick-start).
 
 ```
 cd yourwebsiteroot
 git init
-git submodule add https://github.com/desmondlzy/bloggraph,git themes/bloggraph
+git submodule add https://github.com/desmondlzy/bloggraph.git themes/bloggraph
 ```
 
 Set the theme to `bloggraph` in your site config file (`config.toml`/`config.yaml`/`config.json`).
@@ -21,7 +21,7 @@ The theme is geared towards researchers to showcase their research-related infor
 - _Home page template_ for showing basic information and publications
 - _Publication page template_ for a SIGGRAPH-style research project page
 
-It's recommended to start with the example website (`exampleSite/` of this repo).
+It's recommended to start with the example website (`exampleSite/` in this repo).
 
 ### Recommended Directory Layout
 
