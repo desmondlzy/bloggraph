@@ -2,7 +2,7 @@
   <title>
     {{- $siteTitle := .Site.Title }}
     {{- $pageTitle := .Title }}
-    {{- if eq $siteTitle $pageTitle }}
+    {{- if eq (upper $siteTitle) (upper $pageTitle) }}
       {{- $siteTitle }}
     {{- else }}
       {{- printf "%s | %s" $pageTitle  $siteTitle }}
