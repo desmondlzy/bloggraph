@@ -1,6 +1,5 @@
 {{- define "main" }}
   {{- $publicationList := where .Site.Pages "Type" "publication" }}
-  {{ $publicationList }}
 
   <div class="pub-list">
   {{ range $publicationList }}
@@ -19,9 +18,6 @@
     {{ end }}
 
     <div class="pub-item">
-      <figure class="pub-thumbnail">
-        <img src="{{ $thumbnail }}">
-      </figure>
       <div class="pub-info">
         <div class="pub-title">{{ $title }}</div>
         <div class="pub-author">
@@ -52,6 +48,9 @@
           {{ $summary }}
         </figcaption>
       </div>
+      <figure class="pub-thumbnail">
+        <img src="{{ $thumbnail }}">
+      </figure>
     </div>
   {{ end }}
   </div>

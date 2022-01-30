@@ -120,17 +120,19 @@
       counter-increment: figcounter
 
 .count-h2h3
-    h2
-        counter-increment: seccounter
-        counter-reset: subseccounter
-    
-    h2::before
-        content: counter(seccounter) " \00a0\00a0"
-        display: inline
-    
-    h3
-        counter-increment: subseccounter
+  counter-reset: seccounter
 
-    h3::before
-        content: counter(seccounter) "." counter(subseccounter) " \00a0"
-        display: inline
+  h2
+      counter-increment: seccounter
+      counter-reset: subseccounter
+  
+  h2::before
+      content: counter(seccounter) " \00a0\00a0"
+      display: inline
+  
+  h3
+      counter-increment: subseccounter
+
+  h3::before
+      content: counter(seccounter) "." counter(subseccounter) " \00a0"
+      display: inline
