@@ -2,7 +2,7 @@
   {{- $publicationList := where .Site.Pages "Type" "publication" }}
 
   <div class="pub-list">
-  {{ range $publicationList }}
+  {{ range sort $publicationList "Date" "desc" }}
     {{- $title := .Title }}
     {{- $thumbnail := .Params.Thumbnail }}
     {{- $summary := default "" .Params.Summary }}
