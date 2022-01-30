@@ -24,9 +24,11 @@
 	{{ end }}
 
 	<div class="pub-item">
-		<figure class="pub-thumbnail">
-			<img src="{{ $thumbnail }}">
-		</figure>
+		{{ with $thumbnail }}
+			<figure class="pub-thumbnail">
+				<img src="{{ $thumbnail }}">
+			</figure>
+		{{ end }}
 		<div class="pub-info">
 			<div class="pub-title">{{ $title }}</div>
 			<div class="pub-author">
