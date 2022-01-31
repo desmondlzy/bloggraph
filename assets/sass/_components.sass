@@ -248,6 +248,14 @@
   &-photo
     width: 200px
     margin-right: 1em
+  
+  h1:first-child, h2:first-child
+      margin-top: 0
+      padding-top: 0
+
+  h2:first-child
+      margin-top: 0
+      padding-top: 0
 
   &-info 
     display: flex
@@ -255,6 +263,7 @@
     flex: 1
     margin: 1em 0 1em 0em
     padding-bottom: 1em
+
 
   .spacer 
     flex: 99
@@ -272,11 +281,16 @@
   
 .pub-item 
   display: flex
+  padding-top: 0.5rem
+
+  & > :first-child
+    margin-right: 1rem
 
   .pub-thumbnail 
     width: 30%
     max-width: 150px
-    margin: 0
+    margin-top: 0
+    margin-bottom: 0
 
   .pub-info 
     padding-right: 1em
