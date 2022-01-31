@@ -8,7 +8,7 @@
         {{- $pages := cond site.IsServer (site.RegularPages) (where site.RegularPages "Draft" false) }}
         <!-- Other Articles <br/> -->
         {{- range (where $pages "Permalink" "!=" $currentPermalink ) }}
-          {{- $url := .Permalink }}
+          {{- $url := .Permalink | absURL }}
           {{- $title := .Title }}
           {{- $covers := .Params.covers }}
           {{- $resources := .Resources }}

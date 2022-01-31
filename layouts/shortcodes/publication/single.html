@@ -14,7 +14,7 @@
 	{{- $summary := default "" .Params.Summary}}
 	{{- $paper := default "" .Params.Paper }}
 	{{- $venue := default "" .Params.Venue }}
-	{{- $projectPage := default .Permalink .Params.ProjectPage }}
+	{{- $projectPage := default . .Params.ProjectPage }}
 	{{- $authors := .Params.Authors }}
 
 	{{ range $index, $author := $authors }}
@@ -37,7 +37,7 @@
 					{{ $lastname := index $fullname 0 }}
 					{{ $firstname := index $fullname 1 }}
 					{{ $displayname := printf "%v %v" $firstname $lastname }}
-					{{- if in $displayname "Zhenyuan Liu" -}}<b>{{- $displayname -}}</b>
+					{{- if in $displayname  $.Site.Params.author.name -}}<b>{{- $displayname -}}</b>
 					{{- else -}}{{- $displayname -}}
 					{{- end -}}
 					{{- if ne (add $index 1) (len $authors) -}}{{- "," -}}{{- end -}}
