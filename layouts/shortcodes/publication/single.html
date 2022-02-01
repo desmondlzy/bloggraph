@@ -14,7 +14,7 @@
 	{{- $summary := default "" .Params.Summary}}
 	{{- $paper := default "" .Params.Paper }}
 	{{- $venue := default "" .Params.Venue }}
-	{{- $projectPage := default (.Permalink | absURL) .Params.ProjectPage }}
+	{{- $projectPage := default (.Permalink) .Params.ProjectPage }}
 	{{- $authors := .Params.Authors }}
 
 	{{ range $index, $author := $authors }}
