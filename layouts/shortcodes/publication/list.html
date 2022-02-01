@@ -1,4 +1,5 @@
 {{- $publicationList := where .Site.Pages "Type" "publications" }}
+{{- $publicationList = where $publicationList "Kind" "page" }}
 
 <div class="pub-list">
 {{ range sort $publicationList "Date" "desc" }}
