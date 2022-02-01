@@ -1,8 +1,7 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-layout: publication
 date: {{ .Date }}
-type: publication
+type: publications
 summary: "A wonderful paper."
 thumbnail: 
 paper: "url-to-your-paper.pdf"
