@@ -1,0 +1,10 @@
+{{- define "main" }}
+  {{ .Content }}
+
+  {{- $publicationList := where .Site.Pages "Type" "publications" }}
+  <div class="pub-list">
+  {{ range sort $publicationList "Date" "desc" }}
+    {{ partial "publication-overview" . }}
+  {{ end }}
+  </div>
+{{- end }}

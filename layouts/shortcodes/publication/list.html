@@ -1,55 +1,7 @@
-{{- $publicationList := where .Site.Pages "Type" "publication" }}
+{{- $publicationList := where .Site.Pages "Type" "publications" }}
 
 <div class="pub-list">
-{{ range $publicationList }}
-	{{- $title := .Title }}
-	{{- $thumbnail := .Params.Thumbnail }}
-	{{- $summary := default "" .Params.Summary }}
-	{{- $paper := default "" .Params.Paper }}
-	{{- $venue := default "" .Params.Venue }}
-	{{- $projectPage := default  (.Permalink ) .Params.ProjectPage }}
-	{{- $authors := .Params.Authors }}
-
-	{{ range $index, $author := $authors }}
-		{{ $fullname := split (index $author "name") ", " }}
-		{{ $lastname := index $fullname 0 }}
-		{{ $firstname := index $fullname 1 }}
-	{{ end }}
-
-	<div class="pub-item">
-		<figure class="pub-thumbnail">
-			<img src="{{ $thumbnail }}">
-		</figure>
-		<div class="pub-info">
-			<div class="pub-title">{{ $title }}</div>
-			<div class="pub-author">
-				{{ range $index, $author := $authors }}
-					{{ $fullname := split (index $author "name") ", " }}
-					{{ $lastname := index $fullname 0 }}
-					{{ $firstname := index $fullname 1 }}
-					{{ $displayname := printf "%v %v" $firstname $lastname }}
-					{{- if in $displayname "Zhenyuan Liu" -}}<b>{{- $displayname -}}</b>
-					{{- else -}}{{- $displayname -}}
-					{{- end -}}
-					{{- if ne (add $index 1) (len $authors) -}}{{- "," -}}{{- end -}}
-				{{ end }}
-			</div>
-			<div class="pub-status">
-				<i>
-					{{ with $venue }}
-						<b>{{ .Get "name" }}</b>
-						{{ with .Get "note" }} ({{ . }}){{ end }}
-					{{ end }}
-				</i>
-			</div>
-			<div class="pub-links">
-				<a href={{ $projectPage }}>Project page</a>
-				{{ with $paper }} | <a href={{ $paper }}>Paper</a>{{ end }}
-			</div>
-			<figcaption class="pub-description">
-				{{ $summary }}
-			</figcaption>
-		</div>
-	</div>
+{{ range sort $publicationList "Date" "desc" }}
+	{{ partial "publication-overview" . }}
 {{ end }}
 </div>
