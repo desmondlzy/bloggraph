@@ -6,12 +6,8 @@
 {{- $venue := default "" .Params.Venue }}
 {{- $projectPage := default .Permalink .Params.ProjectPage }}
 {{- $authors := .Params.Authors }}
+{{- $notes := .Params.Notes }}
 
-{{ range $index, $author := $authors }}
-	{{ $fullname := split (index $author "name") ", " }}
-	{{ $lastname := index $fullname 0 }}
-	{{ $firstname := index $fullname 1 }}
-{{ end }}
 
 <div class="pub-item">
 	{{ with $thumbnail }} 
@@ -30,7 +26,24 @@
 		{{- if in $displayname $.Site.Params.author.name -}}<b>{{- $displayname -}}</b>
 		{{- else -}}{{- $displayname -}}
 		{{- end -}}
+
+		{{- range $noteIndex := (index $author "notes") -}}
+			{{- $noteSymbol := (index (slice "*" "^") (sub $noteIndex 1)) -}}
+			{{- $noteSymbol -}}
+		{{- end -}}
+
 		{{- if ne (add $index 1) (len $authors) -}}{{- "," -}}{{- end -}}
+		{{ end }}
+
+		{{ with $notes }}
+		<span class="pale">
+		(
+			{{- range $index, $note := $notes -}}
+				{{- $noteSymbol := (index (slice "*" "^") $index) -}}
+				<span>{{ printf "%v%v  " $noteSymbol $note }}</span>
+			{{- end -}}
+		)
+	</span>
 		{{ end }}
 	</div>
 	<div class="pub-status">
@@ -45,8 +58,8 @@
 		<a href={{ $projectPage }}>Project page</a>
 		{{ with $paper }} | <a href={{ $paper }}>Paper</a>{{ end }}
 	</div>
-	<figcaption class="pub-description">
+	<div class="pub-description pale">
 		{{ $summary }}
-	</figcaption>
+	</div>
 	</div>
 </div>

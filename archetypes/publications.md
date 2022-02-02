@@ -11,8 +11,16 @@ venue:
   note: conditionally accepted
 authors:
   - name: Foo, Bar
-    affiliations: [1, 2]
+    affiliations: [1]
+    notes: [1]
     url: https://desmondlzy.me
+  - name: New Year, Happy
+    affiliations: [1, 2]
+    notes: [2]
+    url: https://desmondlzy.me
+notes:
+  - joint first author
+  - joint last author
 
 affiliations:
   - name: University of Foo

@@ -4,6 +4,7 @@
 {{ $authors := $.Page.Params.Get "authors" }}
 {{ $venue := $.Page.Params.Get "venue" }}
 {{ $affiliations := $.Page.Params.Get "affiliations" }}
+{{ $notes := $.Page.Params.Get "notes" }}
 
 <h1>{{ $title }}</h1>
 
@@ -18,25 +19,35 @@
 		{{ $firstname := index $fullname 1 }}
 		{{ $url := index $author "url" }}
 		{{ $affl := index $author "affiliations"}}
+		{{ $notes := index $author "notes"}}
 		{{ $numAffl := len $affl }}
 
 		<div class="author-info">
 
-		<a class="author-name" href={{ $url }}>{{ $firstname }} {{ $lastname }}</a>
+			<a class="author-name" href={{ $url }}>{{ $firstname }} {{ $lastname }}
+			{{- range $noteIndex := (index $author "notes") -}}
+				{{- $noteSymbol := (index (slice "*" "^") (sub $noteIndex 1)) -}}
+				{{- $noteSymbol -}}
+			{{- end -}}
+			</a>
 
-		<div class="author-affliation">
-		{{ range $index, $affiliationIndex := (index $author "affiliations") }}
-			{{ $affiliationName := (index $affiliations (sub $affiliationIndex 1) "name") }}
-			{{ $affiliationURL := (index $affiliations (sub $affiliationIndex 1) "url") }}
+			<div class="author-affliation">
+			{{ range $index, $affiliationIndex := (index $author "affiliations") }}
+				{{ $affiliationName := (index $affiliations (sub $affiliationIndex 1) "name") }}
+				{{ $affiliationURL := (index $affiliations (sub $affiliationIndex 1) "url") }}
 
-			<a class="author-affiliation-name" href="{{ $affiliationURL }}">{{$affiliationName }}{{ if lt $index (sub $numAffl 1) }},{{ end }}</a>
-			
-		{{ end }}
+				<a class="author-affiliation-name" href="{{ $affiliationURL }}">{{$affiliationName }}{{ if lt $index (sub $numAffl 1) }},{{ end }}</a>
+			{{ end }}
+			</div>
+
 		</div>
-
-		</div>
-
 	{{ end }}
+	<div class="author-notes pale">
+	{{ range $index, $note := $notes }}
+		{{- $noteSymbol := (index (slice "*" "^") $index) -}}
+		<span>{{- $noteSymbol -}}{{- $note -}}</span>
+	{{ end }}
+	</div>
 </div>
 
 {{ with $description }}
