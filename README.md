@@ -2,7 +2,7 @@
 
 An academic theme for [Hugo](https://gohugo.io/), in the style of SIGGRAPH technical paper. Computer graphics people, you know what it is ;)
 
-See [example website](https://desmondlzy.me/bloggraph).
+See [example website](https://desmondlzy.me/bloggraph) and my personal website (which uses a tweaked version of the theme).
 
 ## Install
 
