@@ -6,11 +6,11 @@ summary: "A wonderful paper."
 thumbnail: 
 paper: "url-to-your-paper.pdf"
 venue: 
-  name: SIGGRAPH 2022
+  name: My Favorite Journal 2022
   url: to-publisher-website
   note: conditionally accepted
 authors:
-  - name: Foo, Bar
+  - name: Wishes, Best
     affiliations: [1]
     notes: [1]
     url: https://desmondlzy.me
@@ -19,8 +19,8 @@ authors:
     notes: [2]
     url: https://desmondlzy.me
 notes:
-  - joint first author
-  - joint last author
+  - sole first author
+  - sole last author
 
 affiliations:
   - name: University of Foo
