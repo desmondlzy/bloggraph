@@ -2,7 +2,7 @@
 
 An academic theme for [Hugo](https://gohugo.io/), in the style of SIGGRAPH technical paper. Computer graphics people, you know what it is ;)
 
-Example website [here](https://desmondlzy.me/bloggraph)
+See [example website](https://desmondlzy.me/bloggraph).
 
 ## Install
 
@@ -35,7 +35,7 @@ The [example website](https://desmondlzy.me/bloggraph) contains boilerplate code
 
 The design is inspired by the ACM SIGGRAPH technical paper template. Part of the CSS and template files are modified from the theme [Newsroom](https://github.com/onweru/newsroom).
 
-The following fonts are bundled with Bloggraph (click for license):
+The following fonts are bundled with Bloggraph:
 [FontAwesome](https://fontawesome.com/v4.7/license/), 
 [Linux Biolinum](https://www.fontsquirrel.com/license/linux-biolinum), and 
 [Linux Libertine](https://www.fontsquirrel.com/license/linux-libertine).
