@@ -22,7 +22,7 @@ Set the theme to `bloggraph` in your site config file (`config.toml`/`config.yam
 
 ## Usage
 
-The theme is geared towards researchers who want to showcase their research-related information. Important features include:
+The theme is geared towards researchers who want to showcase their research profile. Important features include:
 
 - _Home page template_ for showing basic information and publications
 - _Publication page template_ for a SIGGRAPH-style research project page
