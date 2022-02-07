@@ -3,12 +3,12 @@
 
 name = "Bloggraph"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
-description = "For researchers... comptuer graphics people you know what's this."
-homepage = "http://example.com/"
+licenselink = "https://github.com/desmondlzy/bloggraph/blob/main/LICENSE"
+description = "Academic theme that focuses on research profile for Hugo."
+homepage = "http://desmondlzy.me/bloggraph"
 tags = []
 features = []
-min_version = "0.61.0"
+min_version = "0.91.0"
 
 [author]
   name = "Desmond Liu"
