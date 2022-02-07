@@ -10,9 +10,7 @@ See [example website](https://desmondlzy.me/bloggraph) and my [personal website]
 
 If you want to start a new website with Bloggraph, following the [example website](https://desmondlzy.me/bloggraph) is the easiest way to get started.
 
-Alternatively,
-
-Follow the "[Add a theme](https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme)" section in the official [quick start guide](https://gohugo.io/getting-started/quick-start).
+Alternatively, follow the "[Add a theme](https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme)" section in the official [quick start guide](https://gohugo.io/getting-started/quick-start). Make sure you've [installed](https://gohugo.io/getting-started/installing/) Hugo extended version (v0.90.0+).
 
 ```
 cd yourwebsiteroot
