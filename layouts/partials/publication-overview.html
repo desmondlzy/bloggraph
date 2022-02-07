@@ -12,7 +12,7 @@
 <div class="pub-item">
 	{{ with $thumbnail }} 
 		<figure class="pub-thumbnail">
-		<img src="{{ $thumbnail }}">
+		<img src="{{ . | relURL }}">
 		</figure>
 	{{ end }}
 	<div class="pub-info">
