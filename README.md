@@ -1,6 +1,6 @@
 # Bloggraph
 
-[Bloggraph Teaser](./content/teaser.jpg)
+![Bloggraph Teaser](https://github.com/desmondlzy/bloggraph-example/blob/main/content/teaser.jpg)
 
 An academic theme for [Hugo](https://gohugo.io/), in the style of SIGGRAPH paper. Computer graphics people, you know what it is ;)
 
