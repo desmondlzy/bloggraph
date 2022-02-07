@@ -1,0 +1,5 @@
+<p class="profile-social-box">
+{{- with $.Site.Params.author.github -}} <a class="profile-social" style="text-decoration: none;" href=https://github.com/{{ . }}><i class="fab fa-github"></i> github/{{- . -}}</a>{{- end -}}
+{{- with $.Site.Params.author.linkedin -}} <a class="profile-social" style="text-decoration: none;" href=https://linkedin.com/in/{{ . }}><i class="fab fa-linkedin-in"></i> linkedin/{{- . -}}</a>{{- end -}}
+{{- with $.Site.Params.author.email -}}<a class="profile-social" style="text-decoration: none;" href=mailto:{{ . }}><i class="fas fa-envelope"></i> {{ . }}</a>{{- end -}}
+</p>
