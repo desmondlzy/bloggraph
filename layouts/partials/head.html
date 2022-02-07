@@ -1,12 +1,21 @@
 <head>
   <title>
     {{- $siteTitle := .Site.Title }}
-    {{- $pageTitle := .Title }}
-    {{- if eq (upper $siteTitle) (upper $pageTitle) }}
-      {{- $siteTitle }}
-    {{- else }}
-      {{- printf "%s | %s" $pageTitle  $siteTitle }}
+    {{- $defaultPageTitle := "" -}}
+
+    {{- if .File }}
+      {{- $defaultPageTitle = (.File.ContentBaseName | humanize | title)  -}}
     {{- end }}
+
+    {{- $pageTitle := default $defaultPageTitle .Title }}
+
+    {{- if and (not .IsHome) (ne $pageTitle "") }}
+      {{- $pageTitle := default $defaultPageTitle .Title }}
+      {{- printf "%s | %s" $pageTitle  $siteTitle }}
+    {{- else }}
+      {{- $siteTitle }}
+    {{- end }}
+
   </title>
   <meta charset='utf-8'>
   {{- with .Site.Params.ga_verify }}
