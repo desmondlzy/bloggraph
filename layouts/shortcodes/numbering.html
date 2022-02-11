@@ -1,4 +1,4 @@
-{{ $figure := default true (.Get "figure") }}
+{{/*  {{ $figure := default true (.Get "figure") }}  */}}
 {{ $h2 := default true (.Get "h2") }}
 {{ $h3 := default true (.Get "h3") }}
 
@@ -14,14 +14,14 @@ h3 {
 </style>
 {{ end }}
  
-{{ if $figure }}
+{{/*  {{ if $figure }}
 <style>
 figure figcaption::before {
   content: "Fig. " counter(figcounter) ".\00a0";
   counter-increment: figcounter;
 }
 </style>
-{{ end }}
+{{ end }}  */}}
 
 {{ if $h2 }}
 <style>
