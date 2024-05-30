@@ -3,9 +3,6 @@ languageCode = 'en-us'
 title = 'Bloggraph Example Website'
 theme = 'bloggraph'
 
-[markup.goldmark.renderer]
-    unsafe = true
-
 [params.author]
     name = "Bar Foo"
     github = "desmondlzy/bloggraph"
