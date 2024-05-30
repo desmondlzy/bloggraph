@@ -3,6 +3,7 @@
 {{- $thumbnail := .Params.Thumbnail }}
 {{- $summary := default "" .Params.Summary }}
 {{- $paper := default "" .Params.Paper }}
+{{- $code := default "" .Params.Code }}
 {{- $venue := default "" .Params.Venue }}
 {{- $projectPage := default .Permalink .Params.ProjectPage }}
 {{- $authors := .Params.Authors }}
@@ -23,7 +24,8 @@
 		{{ $lastname := index $fullname 0 }}
 		{{ $firstname := index $fullname 1 }}
 		{{ $displayname := printf "%v %v" $firstname $lastname }}
-		{{- if in $displayname $.Site.Params.author.name -}}<b>{{- $displayname -}}</b>
+		{{- if (eq $displayname $.Site.Params.author.name) -}}<b>{{- $displayname -}}</b>
+		{{- else if (in $.Site.Params.author.publishName $displayname) -}}<b>{{- $displayname -}}</b>
 		{{- else -}}{{- $displayname -}}
 		{{- end -}}
 
@@ -57,6 +59,7 @@
 	<div class="pub-links">
 		<a href={{ $projectPage }}>Project page</a>
 		{{ with $paper }} | <a href={{ $paper }}>Paper</a>{{ end }}
+		{{ with $code }} | <a href={{ $code }}>Code</a>{{ end }}
 	</div>
 	<div class="pub-description pale">
 		{{ $summary }}

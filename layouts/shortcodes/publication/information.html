@@ -36,7 +36,7 @@
 				{{ $affiliationName := (index $affiliations (sub $affiliationIndex 1) "name") }}
 				{{ $affiliationURL := (index $affiliations (sub $affiliationIndex 1) "url") }}
 
-				<a class="author-affiliation-name" href="{{ $affiliationURL }}">{{$affiliationName }}{{ if lt $index (sub $numAffl 1) }},{{ end }}</a>
+				<a class="author-affiliation-name" href="{{ $affiliationURL }}">{{$affiliationName }}</a>{{ if lt $index (sub $numAffl 1) }}<span style="font-size: 90%;"> and </span>{{ end }}
 			{{ end }}
 			</div>
 
