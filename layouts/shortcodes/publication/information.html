@@ -1,10 +1,10 @@
 {{/*  {{ $.Page.Params }}  */}}
 {{ $title := $.Page.Title }}
-{{ $description := $.Page.Params.summary }}
-{{ $authors := $.Page.Params.authors }}
-{{ $venue := $.Page.Params.venue }}
-{{ $affiliations := $.Page.Params.affiliations }}
-{{ $notes := $.Page.Params.notes }}
+{{ $description := index $.Page.Params "summary" }}
+{{ $authors := index $.Page.Params "authors" }}
+{{ $venue := index $.Page.Params "venue" }}
+{{ $affiliations := index $.Page.Params "affiliations" }}
+{{ $notes := index $.Page.Params "notes" }}
 
 <h1>{{ $title }}</h1>
 

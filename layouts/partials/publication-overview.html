@@ -51,8 +51,8 @@
 	<div class="pub-status">
 		<i>
 		{{ with $venue }}
-			<b>{{ .name }}</b>
-			{{ with .note }} ({{ . }}){{ end }}
+			<b>{{ index . "name" }}</b>
+			{{ with index . "note" }} ({{ . }}){{ end }}
 		{{ end }}
 		</i>
 	</div>
