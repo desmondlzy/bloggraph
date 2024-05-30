@@ -1,8 +1,8 @@
 # Bloggraph
 
-![Bloggraph Teaser](https://github.com/desmondlzy/bloggraph-example/blob/main/content/teaser.jpg)
+![Bloggraph Teaser](/images/screenshot.png)
 
-An academic theme for [Hugo](https://gohugo.io/), in the style of SIGGRAPH paper. Computer graphics people, you know what it is ;)
+An academic theme for [Hugo](https://gohugo.io/), in the style of SIGGRAPH paper. Computer graphics folks, you know what it is ;)
 
 See [example website](https://desmondlzy.me/bloggraph) and my [personal website](https://desmondlzy.me) (which uses a tweaked version of the theme).
 
