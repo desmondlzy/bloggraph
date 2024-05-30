@@ -1,0 +1,23 @@
+baseURL = '/'
+languageCode = 'en-us'
+title = 'Bloggraph Example Website'
+theme = 'bloggraph'
+
+[markup.goldmark.renderer]
+    unsafe = true
+
+[params.author]
+    name = "Bar Foo"
+    github = "desmondlzy/bloggraph"
+    linkedin = ""
+    email = "example@email.address"
+
+[menu]
+[[menu.main]]
+    name = "Home"
+    url = '/'
+    weight = 1
+[[menu.main]]
+    name = "Publications"
+    url = '/publications'
+    weight = 2

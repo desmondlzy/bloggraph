@@ -1,0 +1,4 @@
+[submodule "themes/bloggraph"]
+	path = themes/bloggraph
+	url = https://github.com/desmondlzy/bloggraph.git
+	branch = main
