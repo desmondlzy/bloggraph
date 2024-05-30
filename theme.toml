@@ -5,7 +5,10 @@ name = "Bloggraph"
 license = "MIT"
 licenselink = "https://github.com/desmondlzy/bloggraph/blob/main/LICENSE"
 description = "An academic theme that focuses on research profile for Hugo."
-homepage = "http://desmondlzy.me/bloggraph"
+
+homepage = "https://github.com/desmondlzy/bloggraph"
+demosite = "https://desmondlzy.me/bloggraph"
+
 tags = ["academic", "minimal"]
 features = []
 min_version = "0.91.0"
