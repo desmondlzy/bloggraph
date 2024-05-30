@@ -1,10 +1,10 @@
 {{/*  {{ $.Page.Params }}  */}}
 {{ $title := $.Page.Title }}
-{{ $description := $.Page.Params.Get "summary" }}
-{{ $authors := $.Page.Params.Get "authors" }}
-{{ $venue := $.Page.Params.Get "venue" }}
-{{ $affiliations := $.Page.Params.Get "affiliations" }}
-{{ $notes := $.Page.Params.Get "notes" }}
+{{ $description := $.Page.Params.summary }}
+{{ $authors := $.Page.Params.authors }}
+{{ $venue := $.Page.Params.venue }}
+{{ $affiliations := $.Page.Params.affiliations }}
+{{ $notes := $.Page.Params.notes }}
 
 <h1>{{ $title }}</h1>
 
@@ -36,7 +36,7 @@
 				{{ $affiliationName := (index $affiliations (sub $affiliationIndex 1) "name") }}
 				{{ $affiliationURL := (index $affiliations (sub $affiliationIndex 1) "url") }}
 
-				<a class="author-affiliation-name" href="{{ $affiliationURL }}">{{$affiliationName }}{{ if lt $index (sub $numAffl 1) }},{{ end }}</a>
+				<a class="author-affiliation-name" href="{{ $affiliationURL }}">{{$affiliationName }}</a>{{ if lt $index (sub $numAffl 1) }}<span style="font-size: 90%;"> and </span>{{ end }}
 			{{ end }}
 			</div>
 
