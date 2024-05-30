@@ -49,8 +49,8 @@
 	<div class="pub-status">
 		<i>
 		{{ with $venue }}
-			<b>{{ .Get "name" }}</b>
-			{{ with .Get "note" }} ({{ . }}){{ end }}
+			<b>{{ index . "name" }}</b>
+			{{ with index . "note" }} ({{ . }}){{ end }}
 		{{ end }}
 		</i>
 	</div>
