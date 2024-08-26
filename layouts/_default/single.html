@@ -5,7 +5,7 @@
       <h1 class="post_title">{{ .Title }}</h1>
       <p class="pale">{{ with .Date }}{{ dateFormat "January 2, 2006" . }}{{ end }}</p>
       <aside>
-        {{- $pages := cond site.IsServer (site.RegularPages) (where site.RegularPages "Draft" false) }}
+        {{- $pages := cond hugo.IsServer (site.RegularPages) (where site.RegularPages "Draft" false) }}
         <!-- Other Articles <br/> -->
         {{- range (where $pages "Permalink" "!=" $currentPermalink ) }}
           {{- $url := .Permalink | absURL }}

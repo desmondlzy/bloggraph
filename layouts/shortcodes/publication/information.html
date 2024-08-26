@@ -24,7 +24,7 @@
 
 		<div class="author-info">
 
-			<a class="author-name" href={{ $url }}>{{ $firstname }} {{ $lastname }}
+			<a class="author-name" href="{{ with $url }} {{ $url }} {{ end }}" >{{ $firstname }} {{ $lastname }}
 			{{- range $noteIndex := (index $author "notes") -}}
 				{{- $noteSymbol := (index (slice "*" "^") (sub $noteIndex 1)) -}}
 				{{- $noteSymbol -}}
