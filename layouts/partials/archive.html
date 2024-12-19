@@ -1,11 +1,15 @@
 <div class="archive">
+  {{- .Content -}}
+  <hr/>
   {{ $paginator := .Paginate (where .Data.Pages "Section" "!=" "").ByPublishDate.Reverse }}
   {{- range $paginator.Pages }}
   <a class="archive_item" href="{{ .Permalink }}">
-    <h3 class="article_title">{{ .Title }}</h3>
-    {{- with .Date -}}
-    <span class="post_date" style="width: 8rem;">{{ dateFormat "Jan 02, 2006" . }}</span>
-    {{- end -}}
+    <p class="article_title">
+      {{ .Title }}
+      {{- with .Date -}}
+        <span class="post_date pale" style="width: 8rem;"> / {{ dateFormat "Jan 02, 2006" . }}</span>
+      {{- end -}}
+    </p>
     {{/*  {{- with .Summary -}}
     <p>{{ truncate 150 .  }}</p>  */}}
     {{/*  {{- end -}}  */}}

@@ -12,9 +12,11 @@
 
 <div class="pub-item">
 	{{ with $thumbnail }} 
-		<figure class="pub-thumbnail">
-		<img src="{{ . | relURL }}">
-		</figure>
+			<figure class="pub-thumbnail">
+				<a href="{{ $projectPage }}">
+					<img src="{{ . | relURL }}">
+				</a>
+			</figure>
 	{{ end }}
 	<div class="pub-info">
 	<div class="pub-title">{{ $title }}</div>

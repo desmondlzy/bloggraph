@@ -1,6 +1,5 @@
 {{- define "main" }}
   {{ $title := default .CurrentSection.Section .Page.Title }}
-  {{- .Content -}}
   {{- partial "archive" . }}
   <div class="wrap">
     {{- partial "pager" . }}
