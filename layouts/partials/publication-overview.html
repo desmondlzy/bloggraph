@@ -14,9 +14,13 @@
 	{{- $paper = printf "%s%s" $projectPage $paperRaw }}
 {{- end }}
 
-{{- $thumbnail := $thumbnailRaw }}
-{{- if and (ne $thumbnailRaw "") (not (hasPrefix $thumbnailRaw "/")) }}
-	{{- $thumbnail = printf "%s%s" $projectPage $thumbnailRaw }}
+{{- $thumbnail := "" }}
+{{- if and (ne $thumbnailRaw "") (not (hasPrefix $thumbnailRaw "http://")) (not (hasPrefix $thumbnailRaw "https://")) }}
+    {{- if hasPrefix $thumbnailRaw "/" }}
+    	{{- $thumbnail = strings.TrimPrefix "/" $thumbnailRaw }}
+    {{- else }}
+        {{- $thumbnail = printf "%s%s" $projectPage $thumbnailRaw }}
+    {{- end }}
 {{- end }}
 
 <div class="pub-item">
