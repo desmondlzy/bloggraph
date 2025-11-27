@@ -29,7 +29,6 @@ affiliations:
     url: https://bar.org
 ---
 {{< numbering h2=false h3=false >}}
-{{< publication/information >}}
 
 ## Your content here.
 
