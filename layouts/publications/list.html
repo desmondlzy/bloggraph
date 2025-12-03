@@ -1,0 +1,22 @@
+{{- define "main" }}
+  {{/* bloggraph/layouts/publications/list.html */}}
+  {{ $title := .Title }}
+  {{ $description := .Params.summary }}
+
+  <h1>{{ $title }}</h1>
+
+  {{ with $description }}
+  <p style="margin-top: 0;"><em>{{ . }}</em></p>
+  {{ end }}
+
+  {{ .Content }}
+
+  {{- $publicationList := where .Site.Pages "Type" "publications" }}
+  {{- $publicationList = where $publicationList "Kind" "page" }}
+
+  <div class="pub-list">
+  {{ range sort $publicationList "Date" "desc" }}
+    {{ partial "publication-overview" . }}
+  {{ end }}
+  </div>
+{{- end }}

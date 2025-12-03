@@ -1,13 +1,74 @@
-{{ define "main" }}
-  {{/* start  bloggraph/layouts/publications/single.html  */}}
-  <article class="post">
-    <div>
-      <div class="post_body" style="width: 100%;">
-        <div class="post_inner">
-          {{ .Content }}
+{{- define "main" }}
+  {{/* start  bloggraph/layouts/publications/publications.html  */}}
+  {{/*  {{ $.Page.Params }}  */}}
+  {{ $title := $.Page.Title }}
+  {{ $description := index $.Page.Params "summary" }}
+  {{ $authors := index $.Page.Params "authors" }}
+  {{ $venue := index $.Page.Params "venue" }}
+  {{ $affiliations := index $.Page.Params "affiliations" }}
+  {{ $notes := index $.Page.Params "notes" }}
+
+  <div class="publication-info">
+    <h1>{{ $title }}</h1>
+
+    {{ with $venue }}
+    <h5 style="margin-top: 0;"><a href={{ index . "url" }}></a>{{ index . "name" }}</a></h5>
+    {{ end }}
+
+    <div class="authors header-font">
+      {{ range $index, $author := $authors }}
+        {{ $fullname := split (index $author "name") ", " }}
+        {{ $lastname := index $fullname 0 }}
+        {{ $firstname := index $fullname 1 }}
+        {{ $url := index $author "url" }}
+        {{ $affl := index $author "affiliations"}}
+        {{ $notes := index $author "notes"}}
+        {{ $numAffl := len $affl }}
+
+        <div class="author-info">
+
+          <a class="author-name" href="{{ with $url }} {{ $url }} {{ end }}" >{{ $firstname }} {{ $lastname }}
+          {{- range $noteIndex := (index $author "notes") -}}
+            {{- $noteSymbol := (index (slice "*" "^") (sub $noteIndex 1)) -}}
+            {{- $noteSymbol -}}
+          {{- end -}}
+          </a>
+
+          <div class="author-affliation">
+          {{ range $index, $affiliationIndex := (index $author "affiliations") }}
+            {{ $affiliationName := (index $affiliations (sub $affiliationIndex 1) "name") }}
+            {{ $affiliationURL := (index $affiliations (sub $affiliationIndex 1) "url") }}
+
+            <a class="author-affiliation-name" href="{{ $affiliationURL }}">{{$affiliationName }}</a>{{ if lt $index (sub $numAffl 1) }}<span style="font-size: 90%;"> and </span>{{ end }}
+          {{ end }}
+          </div>
+
         </div>
+      {{ end }}
+      <div class="author-notes pale">
+      {{ range $index, $note := $notes }}
+        {{- $noteSymbol := (index (slice "*" "^") $index) -}}
+        <span>{{- $noteSymbol -}}{{- $note -}}</span>
+      {{ end }}
       </div>
     </div>
-  </article>
-  {{/* start  bloggraph/layouts/publications/single.html  */}}
-{{ end }}
+
+    {{ with $description }}
+    <p style="margin-top: 1em;"><em>{{ . }}</em></p>
+    {{ end }}
+  </div >
+
+  {{ .Content }}
+
+  {{/*  {{- $publicationList := where .Site.Pages "Type" "publications" }}
+  {{- $publicationList = where $publicationList "Kind" "page" }}
+
+  <div class="pub-list">
+  {{ range sort $publicationList "Date" "desc" }}
+    {{ partial "publication-overview" . }}
+  {{ end }}
+  </div>  */}}
+
+  {{/* end  bloggraph/layouts/publications/publications.html  */}}
+{{- end }}
+

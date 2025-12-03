@@ -1,14 +1,27 @@
 {{/*  Pass in a Page context  */}}
 {{- $title := .Title }}
-{{- $thumbnail := .Params.Thumbnail }}
+{{- $thumbnailRaw := .Params.Thumbnail }}
 {{- $summary := default "" .Params.Summary }}
-{{- $paper := default "" .Params.Paper }}
+{{- $paperRaw := default "" .Params.Paper }}
 {{- $code := default "" .Params.Code }}
 {{- $venue := default "" .Params.Venue }}
 {{- $projectPage := default .Permalink .Params.ProjectPage }}
 {{- $authors := .Params.Authors }}
 {{- $notes := .Params.Notes }}
 
+{{- $paper := $paperRaw }}
+{{- if and (ne $paperRaw "") (not (hasPrefix $paperRaw "http://")) (not (hasPrefix $paperRaw "https://")) (not (hasPrefix $paperRaw "/")) }}
+	{{- $paper = printf "%s%s" $projectPage $paperRaw }}
+{{- end }}
+
+{{- $thumbnail := "" }}
+{{- if and (ne $thumbnailRaw "") (not (hasPrefix $thumbnailRaw "http://")) (not (hasPrefix $thumbnailRaw "https://")) }}
+    {{- if hasPrefix $thumbnailRaw "/" }}
+    	{{- $thumbnail = strings.TrimPrefix "/" $thumbnailRaw }}
+    {{- else }}
+        {{- $thumbnail = printf "%s%s" $projectPage $thumbnailRaw }}
+    {{- end }}
+{{- end }}
 
 <div class="pub-item">
 	{{ with $thumbnail }} 
