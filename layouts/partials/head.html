@@ -28,4 +28,7 @@
   {{- partialCached "favicon" . }}
   {{- partialCached "scripts" . }}
   {{- partialCached "styles" . }}
+
+  {{- $rss := printf "%s%s" (.RelPermalink) "index.xml" }}
+  <link rel="alternate" type="application/rss+xml" href="{{ $rss }}" title="{{ .Site.Title }}" />
 </head>

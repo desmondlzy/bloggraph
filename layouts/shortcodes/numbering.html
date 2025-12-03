@@ -16,7 +16,11 @@ h3 {
  
 {{ if $figure }}
 <style>
-figcaption::before {
+figure:first-of-type {
+  counter-reset: figcounter;
+}
+
+figure figcaption::before {
   content: "Fig. " counter(figcounter) ".\00a0";
   counter-increment: figcounter;
 }

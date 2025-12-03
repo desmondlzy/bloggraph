@@ -7,7 +7,11 @@
 
   a
     text-decoration: none
-    color: inherit
+    color: var(--text)
+    transition: color 0.25s ease-in-out
+
+    &:hover
+      color: var(--theme)
 
   &_bar
     width: 100%
